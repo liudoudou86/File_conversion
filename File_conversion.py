@@ -39,7 +39,7 @@ while True:
     if event == '_CONFIRM_':
         address = values['_ADDRESS_']
         file_conversion = file_conversion()
-        sg.popup('已完成')
+        sg.popup_ok('已完成')
     elif event == '_FOLDER_':
         os.startfile(r"D:\@@@")
     elif event in ['_EXIT_',None]:
