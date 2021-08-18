@@ -4,15 +4,17 @@
 
 import os
 import time
+from typing import Sized
+from PySimpleGUI.PySimpleGUI import TRANSPARENT_BUTTON
 from pdf2docx import Converter
 import PySimpleGUI as sg
 
 
 def file_conversion():
 
-    isExists=os.path.exists('D:\@@@')
+    isExists=os.path.exists('D:\###')
     if not isExists:
-        os.mkdir('D:\@@@')
+        os.mkdir('D:\###')
     else:
         pass
 
@@ -21,14 +23,14 @@ def file_conversion():
     cur_time=time.strftime(format_time,time_tup)
 
     pdf_file = address
-    docx_file = 'D://@@@//newfile_{}.docx'.format(cur_time)
+    docx_file = 'D://###//newfile_{}.docx'.format(cur_time)
 
     cv = Converter(pdf_file)
     cv.convert(docx_file, start=0, end=None)
     cv.close()
 
 layout = [
-    [sg.Input(key = '_ADDRESS_', font='微软雅黑', size=(18, 1)), sg.FileBrowse('打开', font='微软雅黑', size=(8, 1))],
+    [sg.Input(key = '_ADDRESS_', font='微软雅黑', size=(18, 1)), sg.FileBrowse('选择文件', font='微软雅黑', size=(8, 1))],
     [sg.Button('文件转换', key = '_CONFIRM_', font='微软雅黑', size=(8, 1)), sg.Button('打开', key='_FOLDER_', size=(8, 1)), sg.Exit('退出', key = '_EXIT_', font='微软雅黑', size=(8, 1))]
 ]
 # 定义窗口，窗口名称
@@ -39,9 +41,9 @@ while True:
     if event == '_CONFIRM_':
         address = values['_ADDRESS_']
         file_conversion = file_conversion()
-        sg.popup_ok('已完成')
+        sg.popup('转换已完成', font='微软雅黑')
     elif event == '_FOLDER_':
-        os.startfile(r"D:\@@@")
+        os.startfile(r"D:\###")
     elif event in ['_EXIT_',None]:
         break
     else:
