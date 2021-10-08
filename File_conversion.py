@@ -30,7 +30,7 @@ def file_conversion():
     cv.close()
 
 layout = [
-    [sg.Input(key = '_ADDRESS_', font='微软雅黑', size=(18, 1)), sg.FileBrowse('选择文件', font='微软雅黑', size=(8, 1))],
+    [sg.Input(key = '_ADDRESS_', font='微软雅黑', size=(20, 1)), sg.FileBrowse('选择文件', font='微软雅黑', size=(8, 1))],
     [sg.Button('文件转换', key = '_CONFIRM_', font='微软雅黑', size=(8, 1)), sg.Button('打开', key='_FOLDER_', size=(8, 1)), sg.Exit('退出', key = '_EXIT_', font='微软雅黑', size=(8, 1))]
 ]
 # 定义窗口，窗口名称
