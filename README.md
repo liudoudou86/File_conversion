@@ -1,2 +1,6 @@
 # 文件转换工具
-* PDF转换成WORD工具
+```
+pyinstaller -Fw FileConversion.py
+```
+* PDF转换成word文件
+* Xmind转换成csv文件
