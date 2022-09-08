@@ -44,7 +44,7 @@ def xmind_conversion():
 
     old_csvfile = xmind_to_zentao_csv_file(xmind_file)
     old_csvfile_path = os.path.split(old_csvfile)
-    new_csvfile = old_csvfile_path[0] + '\csvfile_{}.docx'.format(cur_time)
+    new_csvfile = old_csvfile_path[0] + '\csvfile_{}.csv'.format(cur_time)
     os.rename(old_csvfile, new_csvfile)
     shutil.move(new_csvfile, csvfile_path)
 
