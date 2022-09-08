@@ -8,12 +8,6 @@ import PySimpleGUI as sg
 from pdf2docx import Converter
 from xmind2testcase.zentao import xmind_to_zentao_csv_file
 
-# 存储路径识别
-isExists=os.path.exists('D:\@@@')
-if not isExists:
-    os.mkdir('D:\@@@')
-else:
-    pass
 
 # 获取当前时间
 time_tup=time.localtime(time.time())
@@ -21,6 +15,13 @@ format_time="%Y-%m-%d_%H%M%S"
 cur_time=time.strftime(format_time,time_tup)
 
 def pdf_conversion():
+
+    # 存储路径识别
+    isExists=os.path.exists('D:\@@@')
+    if not isExists:
+        os.mkdir('D:\@@@')
+    else:
+        pass
 
     pdf_file = address
     wordfile_path = 'D://@@@//wordfile_{}.docx'.format(cur_time)
@@ -30,6 +31,13 @@ def pdf_conversion():
     cv.close()
 
 def xmind_conversion():
+
+    # 存储路径识别
+    isExists=os.path.exists('D:\@@@')
+    if not isExists:
+        os.mkdir('D:\@@@')
+    else:
+        pass
 
     xmind_file = address
     csvfile_path = 'D://@@@'
